@@ -1,0 +1,1 @@
+PKG_CFLAGS = -Wno-unused-result -DR_PACKAGE_DIR=\"${R_PACKAGE_DIR}\"
