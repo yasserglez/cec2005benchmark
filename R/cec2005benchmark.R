@@ -1,17 +1,17 @@
 # Main function of the package. Interface to the C code.
-cec2005benchmark <- function (i, X) {
+cec2005benchmark <- function (i, x) {
     if (is.numeric(i) && i >= 1 && i <= 25) {
-        if (is.vector(X)) {
-            row <- 1; col <- length(X)
-        } else if (is.matrix(X)) {
-            row <- nrow(X); col <- ncol(X)
+        if (is.vector(x)) {
+            row <- 1; col <- length(x)
+        } else if (is.matrix(x)) {
+            row <- nrow(x); col <- ncol(x)
         } else {
             stop("x should be a vector or a matrix")
         }
         if (!(col %in% c(2, 10, 30, 50))) {
             stop("only 2, 10, 30, 50 variables are supported")
         }
-        f <- .C("cec2005benchmark", i = as.integer(i), X = as.double(X),
+        f <- .C("cec2005benchmark", i = as.integer(i), x = as.double(x),
                 row = as.integer(row), col = as.integer(col),
                 f = double(row), PACKAGE = "cec2005benchmark")$f
     } else {
