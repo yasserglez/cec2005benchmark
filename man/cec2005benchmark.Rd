@@ -1,8 +1,8 @@
 \name{cec2005benchmark}
 \alias{cec2005benchmark}
-\title{All Functions}
+\title{Benchmark Functions}
 \description{
-Common interface to all functions
+Common interface to all benchmark functions
 }
 \usage{
 cec2005benchmark(i, x)
