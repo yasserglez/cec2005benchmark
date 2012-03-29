@@ -11,6 +11,6 @@ for (i in 1:25) {
     X <- as.matrix(read.table(conn, nrows = 10))
     f <- as.vector(as.matrix(read.table(conn, nrows = 10)))
     close(conn)
-    fbar <- cec2005benchmark(i, X)
-    stopifnot(isTRUE(all.equal(f, fbar, 1e-8)))
+    fhat <- cec2005benchmark(i, X)
+    stopifnot(isTRUE(all.equal(f, fhat, 1e-8)))
 }
