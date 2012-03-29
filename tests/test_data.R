@@ -1,0 +1,16 @@
+library("cec2005benchmark")
+
+cec2005benchmark:::.disablerand()
+
+extdata <- system.file("extdata", package = "cec2005benchmark")
+
+for (i in 1:25) {
+    test_data_file <- paste("test_data_func", i, ".txt", sep = "")
+    test_data_path <- file.path(extdata, test_data_file)
+    conn <- file(test_data_path, "r")
+    X <- as.matrix(read.table(conn, nrows = 10))
+    f <- as.vector(as.matrix(read.table(conn, nrows = 10)))
+    close(conn)
+    fbar <- cec2005benchmark(i, X)
+    stopifnot(isTRUE(all.equal(f, fbar, 1e-8)))
+}

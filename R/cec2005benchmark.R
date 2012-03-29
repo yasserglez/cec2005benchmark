@@ -1,3 +1,4 @@
+# Main function of the package. Interface to the C code.
 cec2005benchmark <- function (i, X) {
     if (is.numeric(i) && i >= 1 && i <= 25) {
         if (is.vector(X)) {
@@ -10,7 +11,7 @@ cec2005benchmark <- function (i, X) {
         if (!(col %in% c(2, 10, 30, 50))) {
             stop("only 2, 10, 30, 50 variables are supported")
         }
-        f <- .C("cec2005benchmark", i = as.integer(i), X = as.double(X), 
+        f <- .C("cec2005benchmark", i = as.integer(i), X = as.double(X),
                 row = as.integer(row), col = as.integer(col),
                 f = double(row), PACKAGE = "cec2005benchmark")$f
     } else {
@@ -19,6 +20,7 @@ cec2005benchmark <- function (i, X) {
     return(f)
 }
 
+# Auxiliary functions.
 cec2005benchmark1 <- function (x) cec2005benchmark(1, x)
 cec2005benchmark2 <- function (x) cec2005benchmark(2, x)
 cec2005benchmark3 <- function (x) cec2005benchmark(3, x)
@@ -44,3 +46,8 @@ cec2005benchmark22 <- function (x) cec2005benchmark(22, x)
 cec2005benchmark23 <- function (x) cec2005benchmark(23, x)
 cec2005benchmark24 <- function (x) cec2005benchmark(24, x)
 cec2005benchmark25 <- function (x) cec2005benchmark(25, x)
+
+# Internal function to isable noise during the tests.
+.disablerand <- function () {
+    invisible(.C("disablerand", PACKAGE = "cec2005benchmark"))
+}

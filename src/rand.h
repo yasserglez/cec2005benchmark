@@ -6,12 +6,8 @@
 #include "global.h"
 
 /* Function declarations for the random number generator */
-void randomize();
+void disablerand();
 long double randomperc();
-int rnd(int low, int high);
-long double rndreal(long double low, long double high);
-void initrandomnormaldeviate();
-long double noise(long double mu, long double sigma);
 long double randomnormaldeviate();
 
 #endif

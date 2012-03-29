@@ -16,13 +16,8 @@ cec2005benchmark(int *i, double *X, int *row, int *col, double *f)
     long double *x;
 
     /* Assign nfunc and nreal in the begining */
-    nfunc = *i;
+    nfunc = 10;
     nreal = *col;
-
-    /* Call these routines to initialize random number generator */
-    /* require for computing noise in some test problems */
-    randomize();
-    initrandomnormaldeviate();
 
     /* nreal and nfunc need to be initialized before calling these routines */
     /* Routine to allocate memory to global variables */

@@ -178,8 +178,7 @@ long double nc_rastrigin(long double *x)
     }
     res = 0.0;
     for (i = 0; i < nreal; i++) {
-        res += (temp_x4[i] * temp_x4[i] - 10.0 * cos(2.0 * PI * temp_x4[i])
-                + 10.0);
+        res += (temp_x4[i] * temp_x4[i] - 10.0 * cos(2.0 * PI * temp_x4[i]) + 10.0);
     }
     return (res);
 }
