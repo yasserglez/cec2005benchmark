@@ -14,7 +14,7 @@
 
 FILE *open_input_data(char *extdata_dir, char *name)
 {
-    FILE *fpt;
+    FILE *fpt = NULL;
     char buf[PATH_MAX];
     snprintf(buf, PATH_MAX, "%s/%s", extdata_dir, name);
     fpt = fopen(buf, "r");
@@ -27,7 +27,7 @@ FILE *open_input_data(char *extdata_dir, char *name)
 void initialize_f1(char *extdata_dir)
 {
     int i, j;
-    FILE *fpt;
+    FILE *fpt = NULL;
     fpt = open_input_data(extdata_dir, "sphere_func_data.txt");
     for (i = 0; i < nfunc; i++) {
         for (j = 0; j < nreal; j++) {
@@ -42,7 +42,7 @@ void initialize_f1(char *extdata_dir)
 void initialize_f2(char *extdata_dir)
 {
     int i, j;
-    FILE *fpt;
+    FILE *fpt = NULL;
     fpt = open_input_data(extdata_dir, "schwefel_102_data.txt");
     for (i = 0; i < nfunc; i++) {
         for (j = 0; j < nreal; j++) {
@@ -57,7 +57,7 @@ void initialize_f2(char *extdata_dir)
 void initialize_f3(char *extdata_dir)
 {
     int i, j;
-    FILE *fpt;
+    FILE *fpt = NULL;
     if (nreal == 2) fpt = open_input_data(extdata_dir, "elliptic_M_D2.txt");
     if (nreal == 10) fpt = open_input_data(extdata_dir, "elliptic_M_D10.txt");
     if (nreal == 30) fpt = open_input_data(extdata_dir, "elliptic_M_D30.txt");
@@ -82,7 +82,7 @@ void initialize_f3(char *extdata_dir)
 void initialize_f4(char *extdata_dir)
 {
     int i, j;
-    FILE *fpt;
+    FILE *fpt = NULL;
     fpt = open_input_data(extdata_dir, "schwefel_102_data.txt");
     for (i = 0; i < nfunc; i++) {
         for (j = 0; j < nreal; j++) {
@@ -98,7 +98,7 @@ void initialize_f5(char *extdata_dir)
 {
     int i, j;
     int index;
-    FILE *fpt;
+    FILE *fpt = NULL;
     char c;
     A_f5 = (long double **) malloc(nreal * sizeof(long double));
     for (i = 0; i < nreal; i++) {
@@ -148,7 +148,7 @@ void initialize_f5(char *extdata_dir)
 void initialize_f6(char *extdata_dir)
 {
     int i, j;
-    FILE *fpt;
+    FILE *fpt = NULL;
     fpt = open_input_data(extdata_dir, "rosenbrock_func_data.txt");
     for (i = 0; i < nfunc; i++) {
         for (j = 0; j < nreal; j++) {
@@ -164,7 +164,7 @@ void initialize_f6(char *extdata_dir)
 void initialize_f7(char *extdata_dir)
 {
     int i, j;
-    FILE *fpt;
+    FILE *fpt = NULL;
     if (nreal == 2) fpt = open_input_data(extdata_dir, "griewank_M_D2.txt");
     if (nreal == 10) fpt = open_input_data(extdata_dir, "griewank_M_D10.txt");
     if (nreal == 30) fpt = open_input_data(extdata_dir, "griewank_M_D30.txt");
@@ -190,7 +190,7 @@ void initialize_f8(char *extdata_dir)
 {
     int i, j;
     int index;
-    FILE *fpt;
+    FILE *fpt = NULL;
     if (nreal == 2) fpt = open_input_data(extdata_dir, "ackley_M_D2.txt");
     if (nreal == 10) fpt = open_input_data(extdata_dir, "ackley_M_D10.txt");
     if (nreal == 30) fpt = open_input_data(extdata_dir, "ackley_M_D30.txt");
@@ -219,7 +219,7 @@ void initialize_f8(char *extdata_dir)
 void initialize_f9(char *extdata_dir)
 {
     int i, j;
-    FILE *fpt;
+    FILE *fpt = NULL;
     fpt = open_input_data(extdata_dir, "rastrigin_func_data.txt");
     for (i = 0; i < nfunc; i++) {
         for (j = 0; j < nreal; j++) {
@@ -234,7 +234,7 @@ void initialize_f9(char *extdata_dir)
 void initialize_f10(char *extdata_dir)
 {
     int i, j;
-    FILE *fpt;
+    FILE *fpt = NULL;
     if (nreal == 2) fpt = open_input_data(extdata_dir, "rastrigin_M_D2.txt");
     if (nreal == 10) fpt = open_input_data(extdata_dir, "rastrigin_M_D10.txt");
     if (nreal == 30) fpt = open_input_data(extdata_dir, "rastrigin_M_D30.txt");
@@ -259,7 +259,7 @@ void initialize_f10(char *extdata_dir)
 void initialize_f11(char *extdata_dir)
 {
     int i, j;
-    FILE *fpt;
+    FILE *fpt = NULL;
     if (nreal == 2) fpt = open_input_data(extdata_dir, "weierstrass_M_D2.txt");
     if (nreal == 10) fpt = open_input_data(extdata_dir, "weierstrass_M_D10.txt");
     if (nreal == 30) fpt = open_input_data(extdata_dir, "weierstrass_M_D30.txt");
@@ -284,7 +284,7 @@ void initialize_f11(char *extdata_dir)
 void initialize_f12(char *extdata_dir)
 {
     int i, j;
-    FILE *fpt;
+    FILE *fpt = NULL;
     char c;
     A_f12 = (long double **) malloc(nreal * sizeof(long double));
     B_f12 = (long double **) malloc(nreal * sizeof(long double));
@@ -338,7 +338,7 @@ void initialize_f12(char *extdata_dir)
 void initialize_f13(char *extdata_dir)
 {
     int i, j;
-    FILE *fpt;
+    FILE *fpt = NULL;
     fpt = open_input_data(extdata_dir, "EF8F2_func_data.txt");
     for (i = 0; i < nfunc; i++) {
         for (j = 0; j < nreal; j++) {
@@ -354,7 +354,7 @@ void initialize_f13(char *extdata_dir)
 void initialize_f14(char *extdata_dir)
 {
     int i, j;
-    FILE *fpt;
+    FILE *fpt = NULL;
     if (nreal == 2) fpt = open_input_data(extdata_dir, "E_ScafferF6_M_D2.txt");
     if (nreal == 10) fpt = open_input_data(extdata_dir, "E_ScafferF6_M_D10.txt");
     if (nreal == 30) fpt = open_input_data(extdata_dir, "E_ScafferF6_M_D30.txt");
@@ -379,7 +379,7 @@ void initialize_f14(char *extdata_dir)
 void initialize_f15(char *extdata_dir)
 {
     int i, j;
-    FILE *fpt;
+    FILE *fpt = NULL;
     char c;
     fpt = open_input_data(extdata_dir, "hybrid_func1_data.txt");
     for (i = 0; i < nfunc; i++) {
@@ -408,7 +408,7 @@ void initialize_f15(char *extdata_dir)
 void initialize_f16(char *extdata_dir)
 {
     int i, j, k;
-    FILE *fpt;
+    FILE *fpt = NULL;
     char c;
     fpt = open_input_data(extdata_dir, "hybrid_func1_data.txt");
     for (i = 0; i < nfunc; i++) {
@@ -452,7 +452,7 @@ void initialize_f16(char *extdata_dir)
 void initialize_f17(char *extdata_dir)
 {
     int i, j, k;
-    FILE *fpt;
+    FILE *fpt = NULL;
     char c;
     fpt = open_input_data(extdata_dir, "hybrid_func1_data.txt");
     for (i = 0; i < nfunc; i++) {
@@ -496,7 +496,7 @@ void initialize_f17(char *extdata_dir)
 void initialize_f18(char *extdata_dir)
 {
     int i, j, k;
-    FILE *fpt;
+    FILE *fpt = NULL;
     char c;
     fpt = open_input_data(extdata_dir, "hybrid_func2_data.txt");
     for (i = 0; i < nfunc; i++) {
@@ -553,7 +553,7 @@ void initialize_f18(char *extdata_dir)
 void initialize_f19(char *extdata_dir)
 {
     int i, j, k;
-    FILE *fpt;
+    FILE *fpt = NULL;
     char c;
     fpt = open_input_data(extdata_dir, "hybrid_func2_data.txt");
     for (i = 0; i < nfunc; i++) {
@@ -611,7 +611,7 @@ void initialize_f20(char *extdata_dir)
 {
     int i, j, k;
     int index;
-    FILE *fpt;
+    FILE *fpt = NULL;
     char c;
     fpt = open_input_data(extdata_dir, "hybrid_func2_data.txt");
     for (i = 0; i < nfunc; i++) {
@@ -672,7 +672,7 @@ void initialize_f20(char *extdata_dir)
 void initialize_f21(char *extdata_dir)
 {
     int i, j, k;
-    FILE *fpt;
+    FILE *fpt = NULL;
     char c;
     fpt = open_input_data(extdata_dir, "hybrid_func3_data.txt");
     for (i = 0; i < nfunc; i++) {
@@ -726,7 +726,7 @@ void initialize_f21(char *extdata_dir)
 void initialize_f22(char *extdata_dir)
 {
     int i, j, k;
-    FILE *fpt;
+    FILE *fpt = NULL;
     char c;
     fpt = open_input_data(extdata_dir, "hybrid_func3_data.txt");
     for (i = 0; i < nfunc; i++) {
@@ -780,7 +780,7 @@ void initialize_f22(char *extdata_dir)
 void initialize_f23(char *extdata_dir)
 {
     int i, j, k;
-    FILE *fpt;
+    FILE *fpt = NULL;
     char c;
     fpt = open_input_data(extdata_dir, "hybrid_func3_data.txt");
     for (i = 0; i < nfunc; i++) {
@@ -834,7 +834,7 @@ void initialize_f23(char *extdata_dir)
 void initialize_f24_f25(char *extdata_dir)
 {
     int i, j, k;
-    FILE *fpt;
+    FILE *fpt = NULL;
     char c;
     fpt = open_input_data(extdata_dir, "hybrid_func4_data.txt");
     for (i = 0; i < nfunc; i++) {
