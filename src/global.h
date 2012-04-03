@@ -3,10 +3,10 @@
 #ifndef _GLOBAL_H
 #define _GLOBAL_H
 
-#include <values.h>
+#include <float.h>
 
 /* Global Constants */
-#define INF MAXDOUBLE
+#define INF DBL_MAX
 #define EPS 1.0e-10
 #define E 2.7182818284590452353602874713526625
 #ifdef PI
