@@ -17,46 +17,46 @@
 /* Global variables that you are required to initialize */
 int nreal; /* number of real variables */
 int nfunc; /* number of basic functions */
-long double bound; /* required for plotting the function profiles for nreal=2 */
+double bound; /* required for plotting the function profiles for nreal=2 */
 int density; /* density of grid points for plotting for nreal=2 */
 
 /* Global variables being used in evaluation of various functions */
 /* These are initalized in file def2.c */
-long double C;
-long double global_bias;
-long double *trans_x;
-long double *basic_f;
-long double *temp_x1;
-long double *temp_x2;
-long double *temp_x3;
-long double *temp_x4;
-long double *weight;
-long double *sigma;
-long double *lambda;
-long double *bias;
-long double *norm_x;
-long double *norm_f;
-long double **o;
-long double **g;
-long double ***l;
+double C;
+double global_bias;
+double *trans_x;
+double *basic_f;
+double *temp_x1;
+double *temp_x2;
+double *temp_x3;
+double *temp_x4;
+double *weight;
+double *sigma;
+double *lambda;
+double *bias;
+double *norm_x;
+double *norm_f;
+double **o;
+double **g;
+double ***l;
 
 /* Auxilary function declarations */
-long double maximum(long double, long double);
-long double minimum(long double, long double);
-long double modulus(long double*, int);
-long double dot(long double*, long double*, int);
-long double mean(long double*, int);
+double maximum(double, double);
+double minimum(double, double);
+double modulus(double*, int);
+double dot(double*, double*, int);
+double mean(double*, int);
 
 /* Basic funcion declarations */
-long double calc_ackley(long double*);
-long double calc_rastrigin(long double*);
-long double calc_weierstrass(long double*);
-long double calc_griewank(long double*);
-long double calc_sphere(long double*);
-long double calc_schwefel(long double*);
-long double calc_rosenbrock(long double *x);
-long double nc_schaffer(long double, long double);
-long double nc_rastrigin(long double*);
+double calc_ackley(double*);
+double calc_rastrigin(double*);
+double calc_weierstrass(double*);
+double calc_griewank(double*);
+double calc_sphere(double*);
+double calc_schwefel(double*);
+double calc_rosenbrock(double *x);
+double nc_schaffer(double, double);
+double nc_rastrigin(double*);
 
 /* Utility function declarations */
 void allocate_memory();
@@ -84,36 +84,36 @@ void initialize_f21(char *extdatadir);
 void initialize_f22(char *extdatadir);
 void initialize_f23(char *extdatadir);
 void initialize_f24_f25(char *extdatadir);
-void transform(long double*, int);
+void transform(double*, int);
 void transform_norm(int);
-void calc_weight(long double*);
+void calc_weight(double*);
 void free_memory();
 
 /* Benchmark function declaration */
-long double calc_benchmark_func_f1(long double *);
-long double calc_benchmark_func_f2(long double *);
-long double calc_benchmark_func_f3(long double *);
-long double calc_benchmark_func_f4(long double *);
-long double calc_benchmark_func_f5(long double *);
-long double calc_benchmark_func_f6(long double *);
-long double calc_benchmark_func_f7(long double *);
-long double calc_benchmark_func_f8(long double *);
-long double calc_benchmark_func_f9(long double *);
-long double calc_benchmark_func_f10(long double *);
-long double calc_benchmark_func_f11(long double *);
-long double calc_benchmark_func_f12(long double *);
-long double calc_benchmark_func_f13(long double *);
-long double calc_benchmark_func_f14(long double *);
-long double calc_benchmark_func_f15(long double *);
-long double calc_benchmark_func_f16(long double *);
-long double calc_benchmark_func_f17(long double *);
-long double calc_benchmark_func_f18(long double *);
-long double calc_benchmark_func_f19(long double *);
-long double calc_benchmark_func_f20(long double *);
-long double calc_benchmark_func_f21(long double *);
-long double calc_benchmark_func_f22(long double *);
-long double calc_benchmark_func_f23(long double *);
-long double calc_benchmark_func_f24_f25(long double *);
+double calc_benchmark_func_f1(double *);
+double calc_benchmark_func_f2(double *);
+double calc_benchmark_func_f3(double *);
+double calc_benchmark_func_f4(double *);
+double calc_benchmark_func_f5(double *);
+double calc_benchmark_func_f6(double *);
+double calc_benchmark_func_f7(double *);
+double calc_benchmark_func_f8(double *);
+double calc_benchmark_func_f9(double *);
+double calc_benchmark_func_f10(double *);
+double calc_benchmark_func_f11(double *);
+double calc_benchmark_func_f12(double *);
+double calc_benchmark_func_f13(double *);
+double calc_benchmark_func_f14(double *);
+double calc_benchmark_func_f15(double *);
+double calc_benchmark_func_f16(double *);
+double calc_benchmark_func_f17(double *);
+double calc_benchmark_func_f18(double *);
+double calc_benchmark_func_f19(double *);
+double calc_benchmark_func_f20(double *);
+double calc_benchmark_func_f21(double *);
+double calc_benchmark_func_f22(double *);
+double calc_benchmark_func_f23(double *);
+double calc_benchmark_func_f24_f25(double *);
 void calc_benchmark_norm_f15();
 void calc_benchmark_norm_f16();
 void calc_benchmark_norm_f17();

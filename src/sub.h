@@ -5,11 +5,11 @@
 
 #include "global.h"
 
-long double **A_f5;
-long double *B_f5;
+double **A_f5;
+double *B_f5;
 
-long double **A_f12;
-long double **B_f12;
-long double *alpha_f12;
+double **A_f12;
+double **B_f12;
+double *alpha_f12;
 
 #endif

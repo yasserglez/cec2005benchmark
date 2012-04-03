@@ -13,7 +13,7 @@ void
 cec2005benchmark(char **extdatadir, int *i, double *X, int *row, int *col, double *f)
 {
     int r, c;
-    long double *x;
+    double *x;
 
     /* Assign nfunc and nreal in the begining */
     nfunc = 10;
@@ -55,7 +55,7 @@ cec2005benchmark(char **extdatadir, int *i, double *X, int *row, int *col, doubl
     }
 
     /* Variable vector */
-    x = (long double *) malloc(nreal * sizeof(long double));
+    x = (double *) malloc(nreal * sizeof(double));
 
     for (r = 0; r < *row; r++) {
         R_CheckUserInterrupt();

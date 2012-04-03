@@ -12,31 +12,31 @@
 void allocate_memory()
 {
     int i, j, k;
-    norm_x = (long double *) malloc(nreal * sizeof(long double));
-    norm_f = (long double *) malloc(nfunc * sizeof(long double));
-    trans_x = (long double *) malloc(nreal * sizeof(long double));
-    basic_f = (long double *) malloc(nfunc * sizeof(long double));
-    temp_x1 = (long double *) malloc(nreal * sizeof(long double));
-    temp_x2 = (long double *) malloc(nreal * sizeof(long double));
-    temp_x3 = (long double *) malloc(nreal * sizeof(long double));
-    temp_x4 = (long double *) malloc(nreal * sizeof(long double));
-    weight = (long double *) malloc(nfunc * sizeof(long double));
-    sigma = (long double *) malloc(nfunc * sizeof(long double));
-    lambda = (long double *) malloc(nfunc * sizeof(long double));
-    bias = (long double *) malloc(nfunc * sizeof(long double));
-    o = (long double **) malloc(nfunc * sizeof(long double));
-    l = (long double ***) malloc(nfunc * sizeof(long double));
-    g = (long double **) malloc(nreal * sizeof(long double));
+    norm_x = (double *) malloc(nreal * sizeof(double));
+    norm_f = (double *) malloc(nfunc * sizeof(double));
+    trans_x = (double *) malloc(nreal * sizeof(double));
+    basic_f = (double *) malloc(nfunc * sizeof(double));
+    temp_x1 = (double *) malloc(nreal * sizeof(double));
+    temp_x2 = (double *) malloc(nreal * sizeof(double));
+    temp_x3 = (double *) malloc(nreal * sizeof(double));
+    temp_x4 = (double *) malloc(nreal * sizeof(double));
+    weight = (double *) malloc(nfunc * sizeof(double));
+    sigma = (double *) malloc(nfunc * sizeof(double));
+    lambda = (double *) malloc(nfunc * sizeof(double));
+    bias = (double *) malloc(nfunc * sizeof(double));
+    o = (double **) malloc(nfunc * sizeof(double));
+    l = (double ***) malloc(nfunc * sizeof(double));
+    g = (double **) malloc(nreal * sizeof(double));
     for (i = 0; i < nfunc; i++) {
-        o[i] = (long double *) malloc(nreal * sizeof(long double));
-        l[i] = (long double **) malloc(nreal * sizeof(long double));
+        o[i] = (double *) malloc(nreal * sizeof(double));
+        l[i] = (double **) malloc(nreal * sizeof(double));
     }
     for (i = 0; i < nreal; i++) {
-        g[i] = (long double *) malloc(nreal * sizeof(long double));
+        g[i] = (double *) malloc(nreal * sizeof(double));
     }
     for (i = 0; i < nfunc; i++) {
         for (j = 0; j < nreal; j++) {
-            l[i][j] = (long double *) malloc(nreal * sizeof(long double));
+            l[i][j] = (double *) malloc(nreal * sizeof(double));
         }
     }
     /* Do some trivial (common) initialization here itself */
@@ -59,10 +59,10 @@ void allocate_memory()
     for (i = 0; i < nfunc; i++) {
         basic_f[i] = 0.0;
         norm_f[i] = 0.0;
-        weight[i] = 1.0 / (long double) nfunc;
+        weight[i] = 1.0 / (double) nfunc;
         sigma[i] = 1.0;
         lambda[i] = 1.0;
-        bias[i] = 100.0 * (long double) i;
+        bias[i] = 100.0 * (double) i;
         for (j = 0; j < nreal; j++) {
             o[i][j] = 0.0;
             for (k = 0; k < nreal; k++) {
@@ -78,7 +78,7 @@ void allocate_memory()
 }
 
 /* Code to transform a variable vector based on function index 'count' */
-void transform(long double *x, int count)
+void transform(double *x, int count)
 {
     int i, j;
     for (i = 0; i < nreal; i++) {
@@ -125,11 +125,11 @@ void transform_norm(int count)
 }
 
 /* Code to compute the weights for a variable vector */
-void calc_weight(long double *x)
+void calc_weight(double *x)
 {
     int i, j;
-    long double sum;
-    long double max;
+    double sum;
+    double max;
     max = -INF;
     for (i = 0; i < nfunc; i++) {
         sum = 0.0;
@@ -148,7 +148,7 @@ void calc_weight(long double *x)
     }
     if (sum == 0.0) {
         for (i = 0; i < nfunc; i++) {
-            weight[i] = 1.0 / (long double) nfunc;
+            weight[i] = 1.0 / (double) nfunc;
         }
     } else {
         for (i = 0; i < nfunc; i++) {

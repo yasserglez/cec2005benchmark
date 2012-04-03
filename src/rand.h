@@ -7,7 +7,7 @@
 
 /* Function declarations for the random number generator */
 void disablerand();
-long double randomperc();
-long double randomnormaldeviate();
+double randomperc();
+double randomnormaldeviate();
 
 #endif

@@ -17,7 +17,7 @@ void disablerand()
 }
 
 /* Fetch a single random number between 0.0 and 1.0 */
-long double randomperc()
+double randomperc()
 {
     double res = 0;
 
@@ -31,7 +31,7 @@ long double randomperc()
 }
 
 /* Compute the noise */
-long double randomnormaldeviate()
+double randomnormaldeviate()
 {
     double res = 0;
 

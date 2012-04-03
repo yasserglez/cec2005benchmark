@@ -10,28 +10,28 @@
 #include "sub.h"
 #include "rand.h"
 
-long double calc_benchmark_func_f1(long double *x)
+double calc_benchmark_func_f1(double *x)
 {
-    long double res;
+    double res;
     transform(x, 0);
     basic_f[0] = calc_sphere(trans_x);
     res = basic_f[0] + bias[0];
     return (res);
 }
 
-long double calc_benchmark_func_f2(long double *x)
+double calc_benchmark_func_f2(double *x)
 {
-    long double res;
+    double res;
     transform(x, 0);
     basic_f[0] = calc_schwefel(trans_x);
     res = basic_f[0] + bias[0];
     return (res);
 }
 
-long double calc_benchmark_func_f3(long double *x)
+double calc_benchmark_func_f3(double *x)
 {
     int i;
-    long double res;
+    double res;
     transform(x, 0);
     basic_f[0] = 0.0;
     for (i = 0; i < nreal; i++) {
@@ -41,9 +41,9 @@ long double calc_benchmark_func_f3(long double *x)
     return (res);
 }
 
-long double calc_benchmark_func_f4(long double *x)
+double calc_benchmark_func_f4(double *x)
 {
-    long double res;
+    double res;
     transform(x, 0);
     basic_f[0] = calc_schwefel(trans_x)
             * (1.0 + 0.4 * fabs(randomnormaldeviate()));
@@ -51,10 +51,10 @@ long double calc_benchmark_func_f4(long double *x)
     return (res);
 }
 
-long double calc_benchmark_func_f5(long double *x)
+double calc_benchmark_func_f5(double *x)
 {
     int i, j;
-    long double res;
+    double res;
     basic_f[0] = -INF;
     for (i = 0; i < nreal; i++) {
         res = 0.0;
@@ -70,55 +70,55 @@ long double calc_benchmark_func_f5(long double *x)
     return (res);
 }
 
-long double calc_benchmark_func_f6(long double *x)
+double calc_benchmark_func_f6(double *x)
 {
-    long double res;
+    double res;
     transform(x, 0);
     basic_f[0] = calc_rosenbrock(trans_x);
     res = basic_f[0] + bias[0];
     return (res);
 }
 
-long double calc_benchmark_func_f7(long double *x)
+double calc_benchmark_func_f7(double *x)
 {
-    long double res;
+    double res;
     transform(x, 0);
     basic_f[0] = calc_griewank(trans_x);
     res = basic_f[0] + bias[0];
     return (res);
 }
 
-long double calc_benchmark_func_f8(long double *x)
+double calc_benchmark_func_f8(double *x)
 {
-    long double res;
+    double res;
     transform(x, 0);
     basic_f[0] = calc_ackley(trans_x);
     res = basic_f[0] + bias[0];
     return (res);
 }
 
-long double calc_benchmark_func_f9(long double *x)
+double calc_benchmark_func_f9(double *x)
 {
-    long double res;
+    double res;
     transform(x, 0);
     basic_f[0] = calc_rastrigin(trans_x);
     res = basic_f[0] + bias[0];
     return (res);
 }
 
-long double calc_benchmark_func_f10(long double *x)
+double calc_benchmark_func_f10(double *x)
 {
-    long double res;
+    double res;
     transform(x, 0);
     basic_f[0] = calc_rastrigin(trans_x);
     res = basic_f[0] + bias[0];
     return (res);
 }
 
-long double calc_benchmark_func_f11(long double *x)
+double calc_benchmark_func_f11(double *x)
 {
     int i;
-    long double res;
+    double res;
     for (i = 0; i < nreal; i++) {
         norm_x[i] = 0.0;
     }
@@ -128,10 +128,10 @@ long double calc_benchmark_func_f11(long double *x)
     return (res);
 }
 
-long double calc_benchmark_func_f12(long double *x)
+double calc_benchmark_func_f12(double *x)
 {
-    long double res;
-    long double sum1, sum2;
+    double res;
+    double sum1, sum2;
     int i, j;
     basic_f[0] = 0.0;
     for (i = 0; i < nreal; i++) {
@@ -148,11 +148,11 @@ long double calc_benchmark_func_f12(long double *x)
     return (res);
 }
 
-long double calc_benchmark_func_f13(long double *x)
+double calc_benchmark_func_f13(double *x)
 {
     int i;
-    long double temp;
-    long double res;
+    double temp;
+    double res;
     transform(x, 0);
     res = 0.0;
     for (i = 0; i < nreal - 1; i++) {
@@ -165,11 +165,11 @@ long double calc_benchmark_func_f13(long double *x)
     return (res);
 }
 
-long double calc_benchmark_func_f14(long double *x)
+double calc_benchmark_func_f14(double *x)
 {
     int i;
-    long double temp1, temp2;
-    long double res;
+    double temp1, temp2;
+    double res;
     transform(x,0);
     res = 0.0;
     for (i = 0; i < nreal - 1; i++) {
@@ -212,10 +212,10 @@ void calc_benchmark_norm_f15()
     return;
 }
 
-long double calc_benchmark_func_f15(long double *x)
+double calc_benchmark_func_f15(double *x)
 {
     int i;
-    long double res;
+    double res;
     transform(x, 0);
     basic_f[0] = calc_rastrigin(trans_x);
     transform(x, 1);
@@ -279,10 +279,10 @@ void calc_benchmark_norm_f16()
     return;
 }
 
-long double calc_benchmark_func_f16(long double *x)
+double calc_benchmark_func_f16(double *x)
 {
     int i;
-    long double res;
+    double res;
     transform(x, 0);
     basic_f[0] = calc_rastrigin(trans_x);
     transform(x, 1);
@@ -346,10 +346,10 @@ void calc_benchmark_norm_f17()
     return;
 }
 
-long double calc_benchmark_func_f17(long double *x)
+double calc_benchmark_func_f17(double *x)
 {
     int i;
-    long double res;
+    double res;
     transform(x, 0);
     basic_f[0] = calc_rastrigin(trans_x);
     transform(x, 1);
@@ -414,10 +414,10 @@ void calc_benchmark_norm_f18()
     return;
 }
 
-long double calc_benchmark_func_f18(long double *x)
+double calc_benchmark_func_f18(double *x)
 {
     int i;
-    long double res;
+    double res;
     transform(x, 0);
     basic_f[0] = calc_ackley(trans_x);
     transform(x, 1);
@@ -481,10 +481,10 @@ void calc_benchmark_norm_f19()
     return;
 }
 
-long double calc_benchmark_func_f19(long double *x)
+double calc_benchmark_func_f19(double *x)
 {
     int i;
-    long double res;
+    double res;
     transform(x, 0);
     basic_f[0] = calc_ackley(trans_x);
     transform(x, 1);
@@ -548,10 +548,10 @@ void calc_benchmark_norm_f20()
     return;
 }
 
-long double calc_benchmark_func_f20(long double *x)
+double calc_benchmark_func_f20(double *x)
 {
     int i;
-    long double res;
+    double res;
     transform(x, 0);
     basic_f[0] = calc_ackley(trans_x);
     transform(x, 1);
@@ -589,7 +589,7 @@ long double calc_benchmark_func_f20(long double *x)
 void calc_benchmark_norm_f21()
 {
     int i;
-    long double temp1, temp2, temp;
+    double temp1, temp2, temp;
     transform_norm(0);
     norm_f[0] = 0.0;
     for (i = 0; i < nreal - 1; i++) {
@@ -644,11 +644,11 @@ void calc_benchmark_norm_f21()
     return;
 }
 
-long double calc_benchmark_func_f21(long double *x)
+double calc_benchmark_func_f21(double *x)
 {
     int i;
-    long double temp1, temp2, temp;
-    long double res;
+    double temp1, temp2, temp;
+    double res;
     transform(x, 0);
     basic_f[0] = 0.0;
     for (i = 0; i < nreal - 1; i++) {
@@ -714,7 +714,7 @@ long double calc_benchmark_func_f21(long double *x)
 void calc_benchmark_norm_f22()
 {
     int i;
-    long double temp1, temp2, temp;
+    double temp1, temp2, temp;
     transform_norm(0);
     norm_f[0] = 0.0;
     for (i = 0; i < nreal - 1; i++) {
@@ -773,11 +773,11 @@ void calc_benchmark_norm_f22()
     return;
 }
 
-long double calc_benchmark_func_f22(long double *x)
+double calc_benchmark_func_f22(double *x)
 {
     int i;
-    long double temp1, temp2, temp;
-    long double res;
+    double temp1, temp2, temp;
+    double res;
     transform(x, 0);
     basic_f[0] = 0.0;
     for (i = 0; i < nreal - 1; i++) {
@@ -843,7 +843,7 @@ long double calc_benchmark_func_f22(long double *x)
 void calc_benchmark_norm_f23()
 {
     int i;
-    long double temp1, temp2, temp;
+    double temp1, temp2, temp;
     transform_norm (0);
     norm_f[0] = 0.0;
     for (i = 0; i < nreal - 1; i++) {
@@ -898,13 +898,13 @@ void calc_benchmark_norm_f23()
     return;
 }
 
-long double calc_benchmark_func_f23(long double *x)
+double calc_benchmark_func_f23(double *x)
 {
     int i;
-    long double temp1, temp2, temp;
-    long double res;
+    double temp1, temp2, temp;
+    double res;
     int a;
-    long double b;
+    double b;
     for (i = 0; i < nreal; i++) {
         if (fabs(x[i] - o[0][i]) >= 0.5) {
             res = 2.0 * x[i];
@@ -989,7 +989,7 @@ long double calc_benchmark_func_f23(long double *x)
 void calc_benchmark_norm_f24_f25()
 {
     int i;
-    long double temp1, temp2, temp;
+    double temp1, temp2, temp;
     for (i = 0; i < nreal; i++) {
         norm_x[i] = 0.0;
     }
@@ -1038,11 +1038,11 @@ void calc_benchmark_norm_f24_f25()
     return;
 }
 
-long double calc_benchmark_func_f24_f25(long double *x)
+double calc_benchmark_func_f24_f25(double *x)
 {
     int i;
-    long double temp1, temp2, temp;
-    long double res;
+    double temp1, temp2, temp;
+    double res;
     for (i = 0; i < nreal; i++) {
         norm_x[i] = 0.0;
     }
