@@ -11,9 +11,11 @@ cec2005benchmark <- function (i, x) {
         if (!(col %in% c(2, 10, 30, 50))) {
             stop("only 2, 10, 30, 50 variables are supported")
         }
-        f <- .C("cec2005benchmark", i = as.integer(i), x = as.double(x),
-                row = as.integer(row), col = as.integer(col),
-                f = double(row), PACKAGE = "cec2005benchmark")$f
+        extdatadir <- system.file("extdata", package = "cec2005benchmark")
+        f <- .C("cec2005benchmark", extdatadir = as.character(extdatadir), 
+                i = as.integer(i), x = as.double(x), row = as.integer(row),
+                col = as.integer(col), f = double(row), 
+                PACKAGE = "cec2005benchmark")$f
     } else {
         stop("i should be an integer between 1 and 25")
     }

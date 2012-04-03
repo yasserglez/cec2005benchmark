@@ -10,7 +10,7 @@
 #include "rand.h"
 
 void
-cec2005benchmark(int *i, double *X, int *row, int *col, double *f)
+cec2005benchmark(char **extdatadir, int *i, double *X, int *row, int *col, double *f)
 {
     int r, c;
     long double *x;
@@ -26,31 +26,31 @@ cec2005benchmark(int *i, double *X, int *row, int *col, double *f)
     /* Routine the initalize global variables */
     /* For test problems 15 to 25, we need to calculate a normalizing quantity */
     switch (*i) {
-        case 1: initialize_f1(); break;
-        case 2: initialize_f2(); break;
-        case 3: initialize_f3(); break;
-        case 4: initialize_f4(); break;
-        case 5: initialize_f5(); break;
-        case 6: initialize_f6(); break;
-        case 7: initialize_f7(); break;
-        case 8: initialize_f8(); break;
-        case 9: initialize_f9(); break;
-        case 10: initialize_f10(); break;
-        case 11: initialize_f11(); break;
-        case 12: initialize_f12(); break;
-        case 13: initialize_f13(); break;
-        case 14: initialize_f14(); break;
-        case 15: initialize_f15(); calc_benchmark_norm_f15(); break;
-        case 16: initialize_f16(); calc_benchmark_norm_f16(); break;
-        case 17: initialize_f17(); calc_benchmark_norm_f17(); break;
-        case 18: initialize_f18(); calc_benchmark_norm_f18(); break;
-        case 19: initialize_f19(); calc_benchmark_norm_f19(); break;
-        case 20: initialize_f20(); calc_benchmark_norm_f20(); break;
-        case 21: initialize_f21(); calc_benchmark_norm_f21(); break;
-        case 22: initialize_f22(); calc_benchmark_norm_f22(); break;
-        case 23: initialize_f23(); calc_benchmark_norm_f23(); break;
-        case 24: initialize_f24_f25(); calc_benchmark_norm_f24_f25(); break;
-        case 25: initialize_f24_f25(); calc_benchmark_norm_f24_f25(); break;
+        case 1: initialize_f1(*extdatadir); break;
+        case 2: initialize_f2(*extdatadir); break;
+        case 3: initialize_f3(*extdatadir); break;
+        case 4: initialize_f4(*extdatadir); break;
+        case 5: initialize_f5(*extdatadir); break;
+        case 6: initialize_f6(*extdatadir); break;
+        case 7: initialize_f7(*extdatadir); break;
+        case 8: initialize_f8(*extdatadir); break;
+        case 9: initialize_f9(*extdatadir); break;
+        case 10: initialize_f10(*extdatadir); break;
+        case 11: initialize_f11(*extdatadir); break;
+        case 12: initialize_f12(*extdatadir); break;
+        case 13: initialize_f13(*extdatadir); break;
+        case 14: initialize_f14(*extdatadir); break;
+        case 15: initialize_f15(*extdatadir); calc_benchmark_norm_f15(); break;
+        case 16: initialize_f16(*extdatadir); calc_benchmark_norm_f16(); break;
+        case 17: initialize_f17(*extdatadir); calc_benchmark_norm_f17(); break;
+        case 18: initialize_f18(*extdatadir); calc_benchmark_norm_f18(); break;
+        case 19: initialize_f19(*extdatadir); calc_benchmark_norm_f19(); break;
+        case 20: initialize_f20(*extdatadir); calc_benchmark_norm_f20(); break;
+        case 21: initialize_f21(*extdatadir); calc_benchmark_norm_f21(); break;
+        case 22: initialize_f22(*extdatadir); calc_benchmark_norm_f22(); break;
+        case 23: initialize_f23(*extdatadir); calc_benchmark_norm_f23(); break;
+        case 24: initialize_f24_f25(*extdatadir); calc_benchmark_norm_f24_f25(); break;
+        case 25: initialize_f24_f25(*extdatadir); calc_benchmark_norm_f24_f25(); break;
         default: break;
     }
 
