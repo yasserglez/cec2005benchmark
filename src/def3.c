@@ -26,15 +26,12 @@ FILE *open_input_data(char *extdata_dir, char *name)
 
 void initialize_f1(char *extdata_dir)
 {
-    int i, j, count;
+    int i, j;
     FILE *fpt = NULL;
     fpt = open_input_data(extdata_dir, "sphere_func_data.txt");
     for (i = 0; i < nfunc; i++) {
         for (j = 0; j < nreal; j++) {
-            count = fscanf(fpt, "%lf", &o[i][j]);
-            if (count == EOF) {
-                error("error reading from the input file\n");
-            }
+            fscanf(fpt, "%lf", &o[i][j]);
         }
     }
     fclose(fpt);
@@ -44,15 +41,12 @@ void initialize_f1(char *extdata_dir)
 
 void initialize_f2(char *extdata_dir)
 {
-    int i, j, count;
+    int i, j;
     FILE *fpt = NULL;
     fpt = open_input_data(extdata_dir, "schwefel_102_data.txt");
     for (i = 0; i < nfunc; i++) {
         for (j = 0; j < nreal; j++) {
-            count = fscanf(fpt, "%lf", &o[i][j]);
-            if (count == EOF) {
-                error("error reading from the input file\n");
-            }
+            fscanf(fpt, "%lf", &o[i][j]);
         }
     }
     fclose(fpt);
@@ -62,7 +56,7 @@ void initialize_f2(char *extdata_dir)
 
 void initialize_f3(char *extdata_dir)
 {
-    int i, j, count;
+    int i, j;
     FILE *fpt = NULL;
     if (nreal == 2) fpt = open_input_data(extdata_dir, "elliptic_M_D2.txt");
     if (nreal == 10) fpt = open_input_data(extdata_dir, "elliptic_M_D10.txt");
@@ -70,20 +64,14 @@ void initialize_f3(char *extdata_dir)
     if (nreal == 50) fpt = open_input_data(extdata_dir, "elliptic_M_D50.txt");
     for (i = 0; i < nreal; i++) {
         for (j = 0; j < nreal; j++) {
-            count = fscanf(fpt, "%lf", &g[i][j]);
-            if (count == EOF) {
-                error("error reading from the input file\n");
-            }
+            fscanf(fpt, "%lf", &g[i][j]);
         }
     }
     fclose(fpt);
     fpt = open_input_data(extdata_dir, "high_cond_elliptic_rot_data.txt");
     for (i = 0; i < nfunc; i++) {
         for (j = 0; j < nreal; j++) {
-            count = fscanf(fpt, "%lf", &o[i][j]);
-            if (count == EOF) {
-                error("error reading from the input file\n");
-            }
+            fscanf(fpt, "%lf", &o[i][j]);
         }
     }
     fclose(fpt);
@@ -93,15 +81,12 @@ void initialize_f3(char *extdata_dir)
 
 void initialize_f4(char *extdata_dir)
 {
-    int i, j, count;
+    int i, j;
     FILE *fpt = NULL;
     fpt = open_input_data(extdata_dir, "schwefel_102_data.txt");
     for (i = 0; i < nfunc; i++) {
         for (j = 0; j < nreal; j++) {
-            count = fscanf(fpt, "%lf", &o[i][j]);
-            if (count == EOF) {
-                error("error reading from the input file\n");
-            }
+            fscanf(fpt, "%lf", &o[i][j]);
         }
     }
     fclose(fpt);
@@ -111,7 +96,7 @@ void initialize_f4(char *extdata_dir)
 
 void initialize_f5(char *extdata_dir)
 {
-    int i, j, count;
+    int i, j;
     int index;
     FILE *fpt = NULL;
     char c;
@@ -123,30 +108,18 @@ void initialize_f5(char *extdata_dir)
     fpt = open_input_data(extdata_dir, "schwefel_206_data.txt");
     for (i = 0; i < nfunc; i++) {
         for (j = 0; j < nreal; j++) {
-            count = fscanf(fpt, "%lf", &o[i][j]);
-            if (count == EOF) {
-                error("error reading from the input file\n");
-            }
+            fscanf(fpt, "%lf", &o[i][j]);
         }
         do {
-            count = fscanf(fpt, "%c", &c);
-            if (count == EOF) {
-                error("error reading from the input file\n");
-            }
+            fscanf(fpt, "%c", &c);
         } while (c != '\n');
     }
     for (i = 0; i < nreal; i++) {
         for (j = 0; j < nreal; j++) {
-            count = fscanf(fpt, "%lf", &A_f5[i][j]);
-            if (count == EOF) {
-                error("error reading from the input file\n");
-            }
+            fscanf(fpt, "%lf", &A_f5[i][j]);
         }
         do {
-            count = fscanf(fpt, "%c", &c);
-            if (count == EOF) {
-                error("error reading from the input file\n");
-            }
+            fscanf(fpt, "%c", &c);
         } while (c != '\n');
     }
     fclose(fpt);
@@ -174,15 +147,12 @@ void initialize_f5(char *extdata_dir)
 
 void initialize_f6(char *extdata_dir)
 {
-    int i, j, count;
+    int i, j;
     FILE *fpt = NULL;
     fpt = open_input_data(extdata_dir, "rosenbrock_func_data.txt");
     for (i = 0; i < nfunc; i++) {
         for (j = 0; j < nreal; j++) {
-            count = fscanf(fpt, "%lf", &o[i][j]);
-            if (count == EOF) {
-                error("error reading from the input file\n");
-            }
+            fscanf(fpt, "%lf", &o[i][j]);
             o[i][j] -= 1.0;
         }
     }
@@ -193,7 +163,7 @@ void initialize_f6(char *extdata_dir)
 
 void initialize_f7(char *extdata_dir)
 {
-    int i, j, count;
+    int i, j;
     FILE *fpt = NULL;
     if (nreal == 2) fpt = open_input_data(extdata_dir, "griewank_M_D2.txt");
     if (nreal == 10) fpt = open_input_data(extdata_dir, "griewank_M_D10.txt");
@@ -201,20 +171,14 @@ void initialize_f7(char *extdata_dir)
     if (nreal == 50) fpt = open_input_data(extdata_dir, "griewank_M_D50.txt");
     for (i = 0; i < nreal; i++) {
         for (j = 0; j < nreal; j++) {
-            count = fscanf(fpt, "%lf", &g[i][j]);
-            if (count == EOF) {
-                error("error reading from the input file\n");
-            }
+            fscanf(fpt, "%lf", &g[i][j]);
         }
     }
     fclose(fpt);
     fpt = open_input_data(extdata_dir, "griewank_func_data.txt");
     for (i = 0; i < nfunc; i++) {
         for (j = 0; j < nreal; j++) {
-            count = fscanf(fpt, "%lf", &o[i][j]);
-            if (count == EOF) {
-                error("error reading from the input file\n");
-            }
+            fscanf(fpt, "%lf", &o[i][j]);
         }
     }
     fclose(fpt);
@@ -224,7 +188,7 @@ void initialize_f7(char *extdata_dir)
 
 void initialize_f8(char *extdata_dir)
 {
-    int i, j, count;
+    int i, j;
     int index;
     FILE *fpt = NULL;
     if (nreal == 2) fpt = open_input_data(extdata_dir, "ackley_M_D2.txt");
@@ -233,20 +197,14 @@ void initialize_f8(char *extdata_dir)
     if (nreal == 50) fpt = open_input_data(extdata_dir, "ackley_M_D50.txt");
     for (i = 0; i < nreal; i++) {
         for (j = 0; j < nreal; j++) {
-            count = fscanf(fpt, "%lf", &g[i][j]);
-            if (count == EOF) {
-                error("error reading from the input file\n");
-            }
+            fscanf(fpt, "%lf", &g[i][j]);
         }
     }
     fclose(fpt);
     fpt = open_input_data(extdata_dir, "ackley_func_data.txt");
     for (i = 0; i < nfunc; i++) {
         for (j = 0; j < nreal; j++) {
-            count = fscanf(fpt, "%lf", &o[i][j]);
-            if (count == EOF) {
-                error("error reading from the input file\n");
-            }
+            fscanf(fpt, "%lf", &o[i][j]);
         }
     }
     fclose(fpt);
@@ -260,15 +218,12 @@ void initialize_f8(char *extdata_dir)
 
 void initialize_f9(char *extdata_dir)
 {
-    int i, j, count;
+    int i, j;
     FILE *fpt = NULL;
     fpt = open_input_data(extdata_dir, "rastrigin_func_data.txt");
     for (i = 0; i < nfunc; i++) {
         for (j = 0; j < nreal; j++) {
-            count = fscanf(fpt, "%lf", &o[i][j]);
-            if (count == EOF) {
-                error("error reading from the input file\n");
-            }
+            fscanf(fpt, "%lf", &o[i][j]);
         }
     }
     fclose(fpt);
@@ -278,7 +233,7 @@ void initialize_f9(char *extdata_dir)
 
 void initialize_f10(char *extdata_dir)
 {
-    int i, j, count;
+    int i, j;
     FILE *fpt = NULL;
     if (nreal == 2) fpt = open_input_data(extdata_dir, "rastrigin_M_D2.txt");
     if (nreal == 10) fpt = open_input_data(extdata_dir, "rastrigin_M_D10.txt");
@@ -286,20 +241,14 @@ void initialize_f10(char *extdata_dir)
     if (nreal == 50) fpt = open_input_data(extdata_dir, "rastrigin_M_D50.txt");
     for (i = 0; i < nreal; i++) {
         for (j = 0; j < nreal; j++) {
-            count = fscanf(fpt, "%lf", &g[i][j]);
-            if (count == EOF) {
-                error("error reading from the input file\n");
-            }
+            fscanf(fpt, "%lf", &g[i][j]);
         }
     }
     fclose(fpt);
     fpt = open_input_data(extdata_dir, "rastrigin_func_data.txt");
     for (i = 0; i < nfunc; i++) {
         for (j = 0; j < nreal; j++) {
-            count = fscanf(fpt, "%lf", &o[i][j]);
-            if (count == EOF) {
-                error("error reading from the input file\n");
-            }
+            fscanf(fpt, "%lf", &o[i][j]);
         }
     }
     fclose(fpt);
@@ -309,7 +258,7 @@ void initialize_f10(char *extdata_dir)
 
 void initialize_f11(char *extdata_dir)
 {
-    int i, j, count;
+    int i, j;
     FILE *fpt = NULL;
     if (nreal == 2) fpt = open_input_data(extdata_dir, "weierstrass_M_D2.txt");
     if (nreal == 10) fpt = open_input_data(extdata_dir, "weierstrass_M_D10.txt");
@@ -317,20 +266,14 @@ void initialize_f11(char *extdata_dir)
     if (nreal == 50) fpt = open_input_data(extdata_dir, "weierstrass_M_D50.txt");
     for (i = 0; i < nreal; i++) {
         for (j = 0; j < nreal; j++) {
-            count = fscanf(fpt, "%lf", &g[i][j]);
-            if (count == EOF) {
-                error("error reading from the input file\n");
-            }
+            fscanf(fpt, "%lf", &g[i][j]);
         }
     }
     fclose(fpt);
     fpt = open_input_data(extdata_dir, "weierstrass_data.txt");
     for (i = 0; i < nfunc; i++) {
         for (j = 0; j < nreal; j++) {
-            count = fscanf(fpt, "%lf", &o[i][j]);
-            if (count == EOF) {
-                error("error reading from the input file\n");
-            }
+            fscanf(fpt, "%lf", &o[i][j]);
         }
     }
     fclose(fpt);
@@ -340,7 +283,7 @@ void initialize_f11(char *extdata_dir)
 
 void initialize_f12(char *extdata_dir)
 {
-    int i, j, count;
+    int i, j;
     FILE *fpt = NULL;
     char c;
     A_f12 = (double **) malloc(nreal * sizeof(double));
@@ -354,59 +297,38 @@ void initialize_f12(char *extdata_dir)
     /* Reading A */
     for (i = 0; i < nreal; i++) {
         for (j = 0; j < nreal; j++) {
-            count = fscanf(fpt, "%lf", &A_f12[i][j]);
-            if (count == EOF) {
-                error("error reading from the input file\n");
-            }
+            fscanf(fpt, "%lf", &A_f12[i][j]);
         }
         do {
-            count = fscanf(fpt, "%c", &c);
-            if (count == EOF) {
-                error("error reading from the input file\n");
-            }
+            fscanf(fpt, "%c", &c);
         } while (c != '\n');
     }
     if (i != 100) {
         for (i = nreal; i < 100; i++) {
             do {
-                count = fscanf(fpt, "%c", &c);
-                if (count == EOF) {
-                    error("error reading from the input file\n");
-                }
+                fscanf(fpt, "%c", &c);
             } while (c != '\n');
         }
     }
     /* Reading B */
     for (i = 0; i < nreal; i++) {
         for (j = 0; j < nreal; j++) {
-            count = fscanf(fpt, "%lf", &B_f12[i][j]);
-            if (count == EOF) {
-                error("error reading from the input file\n");
-            }
+            fscanf(fpt, "%lf", &B_f12[i][j]);
         }
         do {
-            count = fscanf(fpt, "%c", &c);
-            if (count == EOF) {
-                error("error reading from the input file\n");
-            }
+            fscanf(fpt, "%c", &c);
         } while (c != '\n');
     }
     if (i != 100) {
         for (i = nreal; i < 100; i++) {
             do {
-                count = fscanf(fpt, "%c", &c);
-                if (count == EOF) {
-                    error("error reading from the input file\n");
-                }
+                fscanf(fpt, "%c", &c);
             } while (c != '\n');
         }
     }
     /* Reading alpha */
     for (i = 0; i < nreal; i++) {
-        count = fscanf(fpt, "%lf", &alpha_f12[i]);
-        if (count == EOF) {
-            error("error reading from the input file\n");
-        }
+        fscanf(fpt, "%lf", &alpha_f12[i]);
     }
     fclose(fpt);
     bias[0] = -460.0;
@@ -415,15 +337,12 @@ void initialize_f12(char *extdata_dir)
 
 void initialize_f13(char *extdata_dir)
 {
-    int i, j, count;
+    int i, j;
     FILE *fpt = NULL;
     fpt = open_input_data(extdata_dir, "EF8F2_func_data.txt");
     for (i = 0; i < nfunc; i++) {
         for (j = 0; j < nreal; j++) {
-            count = fscanf(fpt, "%lf", &o[i][j]);
-            if (count == EOF) {
-                error("error reading from the input file\n");
-            }
+            fscanf(fpt, "%lf", &o[i][j]);
             o[i][j] -= 1.0;
         }
     }
@@ -434,7 +353,7 @@ void initialize_f13(char *extdata_dir)
 
 void initialize_f14(char *extdata_dir)
 {
-    int i, j, count;
+    int i, j;
     FILE *fpt = NULL;
     if (nreal == 2) fpt = open_input_data(extdata_dir, "E_ScafferF6_M_D2.txt");
     if (nreal == 10) fpt = open_input_data(extdata_dir, "E_ScafferF6_M_D10.txt");
@@ -442,20 +361,14 @@ void initialize_f14(char *extdata_dir)
     if (nreal == 50) fpt = open_input_data(extdata_dir, "E_ScafferF6_M_D50.txt");
     for (i = 0; i < nreal; i++) {
         for (j = 0; j < nreal; j++) {
-            count = fscanf(fpt, "%lf", &g[i][j]);
-            if (count == EOF) {
-                error("error reading from the input file\n");
-            }
+            fscanf(fpt, "%lf", &g[i][j]);
         }
     }
     fclose(fpt);
     fpt = open_input_data(extdata_dir, "E_ScafferF6_func_data.txt");
     for (i = 0; i < nfunc; i++) {
         for (j = 0; j < nreal; j++) {
-            count = fscanf(fpt, "%lf", &o[i][j]);
-            if (count == EOF) {
-                error("error reading from the input file\n");
-            }
+            fscanf(fpt, "%lf", &o[i][j]);
         }
     }
     fclose(fpt);
@@ -465,22 +378,16 @@ void initialize_f14(char *extdata_dir)
 
 void initialize_f15(char *extdata_dir)
 {
-    int i, j, count;
+    int i, j;
     FILE *fpt = NULL;
     char c;
     fpt = open_input_data(extdata_dir, "hybrid_func1_data.txt");
     for (i = 0; i < nfunc; i++) {
         for (j = 0; j < nreal; j++) {
-            count = fscanf(fpt, "%lf", &o[i][j]);
-            if (count == EOF) {
-                error("error reading from the input file\n");
-            }
+            fscanf(fpt, "%lf", &o[i][j]);
         }
         do {
-            count = fscanf(fpt, "%c", &c);
-            if (count == EOF) {
-                error("error reading from the input file\n");
-            }
+            fscanf(fpt, "%c", &c);
         } while (c != '\n');
     }
     fclose(fpt);
@@ -500,22 +407,16 @@ void initialize_f15(char *extdata_dir)
 
 void initialize_f16(char *extdata_dir)
 {
-    int i, j, k, count;
+    int i, j, k;
     FILE *fpt = NULL;
     char c;
     fpt = open_input_data(extdata_dir, "hybrid_func1_data.txt");
     for (i = 0; i < nfunc; i++) {
         for (j = 0; j < nreal; j++) {
-            count = fscanf(fpt, "%lf", &o[i][j]);
-            if (count == EOF) {
-                error("error reading from the input file\n");
-            }
+            fscanf(fpt, "%lf", &o[i][j]);
         }
         do {
-            count = fscanf(fpt, "%c", &c);
-            if (count == EOF) {
-                error("error reading from the input file\n");
-            }
+            fscanf(fpt, "%c", &c);
         } while (c != '\n');
     }
     fclose(fpt);
@@ -526,16 +427,10 @@ void initialize_f16(char *extdata_dir)
     for (i = 0; i < nfunc; i++) {
         for (j = 0; j < nreal; j++) {
             for (k = 0; k < nreal; k++) {
-                count = fscanf(fpt, "%lf", &l[i][j][k]);
-                if (count == EOF) {
-                    error("error reading from the input file\n");
-                }
+                fscanf(fpt, "%lf", &l[i][j][k]);
             }
             do {
-                count = fscanf(fpt, "%c", &c);
-                if (count == EOF) {
-                    error("error reading from the input file\n");
-                }
+                fscanf(fpt, "%c", &c);
             } while (c != '\n');
         }
     }
@@ -556,22 +451,16 @@ void initialize_f16(char *extdata_dir)
 
 void initialize_f17(char *extdata_dir)
 {
-    int i, j, k, count;
+    int i, j, k;
     FILE *fpt = NULL;
     char c;
     fpt = open_input_data(extdata_dir, "hybrid_func1_data.txt");
     for (i = 0; i < nfunc; i++) {
         for (j = 0; j < nreal; j++) {
-            count = fscanf(fpt, "%lf", &o[i][j]);
-            if (count == EOF) {
-                error("error reading from the input file\n");
-            }
+            fscanf(fpt, "%lf", &o[i][j]);
         }
         do {
-            count = fscanf(fpt, "%c", &c);
-            if (count == EOF) {
-                error("error reading from the input file\n");
-            }
+            fscanf(fpt, "%c", &c);
         } while (c != '\n');
     }
     fclose(fpt);
@@ -582,16 +471,10 @@ void initialize_f17(char *extdata_dir)
     for (i = 0; i < nfunc; i++) {
         for (j = 0; j < nreal; j++) {
             for (k = 0; k < nreal; k++) {
-                count = fscanf(fpt, "%lf", &l[i][j][k]);
-                if (count == EOF) {
-                    error("error reading from the input file\n");
-                }
+                fscanf(fpt, "%lf", &l[i][j][k]);
             }
             do {
-                count = fscanf(fpt, "%c", &c);
-                if (count == EOF) {
-                    error("error reading from the input file\n");
-                }
+                fscanf(fpt, "%c", &c);
             } while (c != '\n');
         }
     }
@@ -612,22 +495,16 @@ void initialize_f17(char *extdata_dir)
 
 void initialize_f18(char *extdata_dir)
 {
-    int i, j, k, count;
+    int i, j, k;
     FILE *fpt = NULL;
     char c;
     fpt = open_input_data(extdata_dir, "hybrid_func2_data.txt");
     for (i = 0; i < nfunc; i++) {
         for (j = 0; j < nreal; j++) {
-            count = fscanf(fpt, "%lf", &o[i][j]);
-            if (count == EOF) {
-                error("error reading from the input file\n");
-            }
+            fscanf(fpt, "%lf", &o[i][j]);
         }
         do {
-            count = fscanf(fpt, "%c", &c);
-            if (count == EOF) {
-                error("error reading from the input file\n");
-            }
+            fscanf(fpt, "%c", &c);
         } while (c != '\n');
     }
     fclose(fpt);
@@ -638,16 +515,10 @@ void initialize_f18(char *extdata_dir)
     for (i = 0; i < nfunc; i++) {
         for (j = 0; j < nreal; j++) {
             for (k = 0; k < nreal; k++) {
-                count = fscanf(fpt, "%lf", &l[i][j][k]);
-                if (count == EOF) {
-                    error("error reading from the input file\n");
-                }
+                fscanf(fpt, "%lf", &l[i][j][k]);
             }
             do {
-                count = fscanf(fpt, "%c", &c);
-                if (count == EOF) {
-                    error("error reading from the input file\n");
-                }
+                fscanf(fpt, "%c", &c);
             } while (c != '\n');
         }
     }
@@ -681,22 +552,16 @@ void initialize_f18(char *extdata_dir)
 
 void initialize_f19(char *extdata_dir)
 {
-    int i, j, k, count;
+    int i, j, k;
     FILE *fpt = NULL;
     char c;
     fpt = open_input_data(extdata_dir, "hybrid_func2_data.txt");
     for (i = 0; i < nfunc; i++) {
         for (j = 0; j < nreal; j++) {
-            count = fscanf(fpt, "%lf", &o[i][j]);
-            if (count == EOF) {
-                error("error reading from the input file\n");
-            }
+            fscanf(fpt, "%lf", &o[i][j]);
         }
         do {
-            count = fscanf(fpt, "%c", &c);
-            if (count == EOF) {
-                error("error reading from the input file\n");
-            }
+            fscanf(fpt, "%c", &c);
         } while (c != '\n');
     }
     fclose(fpt);
@@ -707,16 +572,10 @@ void initialize_f19(char *extdata_dir)
     for (i = 0; i < nfunc; i++) {
         for (j = 0; j < nreal; j++) {
             for (k = 0; k < nreal; k++) {
-                count = fscanf(fpt, "%lf", &l[i][j][k]);
-                if (count == EOF) {
-                    error("error reading from the input file\n");
-                }
+                fscanf(fpt, "%lf", &l[i][j][k]);
             }
             do {
-                count = fscanf(fpt, "%c", &c);
-                if (count == EOF) {
-                    error("error reading from the input file\n");
-                }
+                fscanf(fpt, "%c", &c);
             } while (c != '\n');
         }
     }
@@ -750,23 +609,17 @@ void initialize_f19(char *extdata_dir)
 
 void initialize_f20(char *extdata_dir)
 {
-    int i, j, k, count;
+    int i, j, k;
     int index;
     FILE *fpt = NULL;
     char c;
     fpt = open_input_data(extdata_dir, "hybrid_func2_data.txt");
     for (i = 0; i < nfunc; i++) {
         for (j = 0; j < nreal; j++) {
-            count = fscanf(fpt, "%lf", &o[i][j]);
-            if (count == EOF) {
-                error("error reading from the input file\n");
-            }
+            fscanf(fpt, "%lf", &o[i][j]);
         }
         do {
-            count = fscanf(fpt, "%c", &c);
-            if (count == EOF) {
-                error("error reading from the input file\n");
-            }
+            fscanf(fpt, "%c", &c);
         } while (c != '\n');
     }
     fclose(fpt);
@@ -781,16 +634,10 @@ void initialize_f20(char *extdata_dir)
     for (i = 0; i < nfunc; i++) {
         for (j = 0; j < nreal; j++) {
             for (k = 0; k < nreal; k++) {
-                count = fscanf(fpt, "%lf", &l[i][j][k]);
-                if (count == EOF) {
-                    error("error reading from the input file\n");
-                }
+                fscanf(fpt, "%lf", &l[i][j][k]);
             }
             do {
-                count = fscanf(fpt, "%c", &c);
-                if (count == EOF) {
-                    error("error reading from the input file\n");
-                }
+                fscanf(fpt, "%c", &c);
             } while (c != '\n');
         }
     }
@@ -824,22 +671,16 @@ void initialize_f20(char *extdata_dir)
 
 void initialize_f21(char *extdata_dir)
 {
-    int i, j, k, count;
+    int i, j, k;
     FILE *fpt = NULL;
     char c;
     fpt = open_input_data(extdata_dir, "hybrid_func3_data.txt");
     for (i = 0; i < nfunc; i++) {
         for (j = 0; j < nreal; j++) {
-            count = fscanf(fpt, "%lf", &o[i][j]);
-            if (count == EOF) {
-                error("error reading from the input file\n");
-            }
+            fscanf(fpt, "%lf", &o[i][j]);
         }
         do {
-            count = fscanf(fpt, "%c", &c);
-            if (count == EOF) {
-                error("error reading from the input file\n");
-            }
+            fscanf(fpt, "%c", &c);
         } while (c != '\n');
     }
     fclose(fpt);
@@ -850,16 +691,10 @@ void initialize_f21(char *extdata_dir)
     for (i = 0; i < nfunc; i++) {
         for (j = 0; j < nreal; j++) {
             for (k = 0; k < nreal; k++) {
-                count = fscanf(fpt, "%lf", &l[i][j][k]);
-                if (count == EOF) {
-                    error("error reading from the input file\n");
-                }
+                fscanf(fpt, "%lf", &l[i][j][k]);
             }
             do {
-                count = fscanf(fpt, "%c", &c);
-                if (count == EOF) {
-                    error("error reading from the input file\n");
-                }
+                fscanf(fpt, "%c", &c);
             } while (c != '\n');
         }
     }
@@ -890,22 +725,16 @@ void initialize_f21(char *extdata_dir)
 
 void initialize_f22(char *extdata_dir)
 {
-    int i, j, k, count;
+    int i, j, k;
     FILE *fpt = NULL;
     char c;
     fpt = open_input_data(extdata_dir, "hybrid_func3_data.txt");
     for (i = 0; i < nfunc; i++) {
         for (j = 0; j < nreal; j++) {
-            count = fscanf(fpt, "%lf", &o[i][j]);
-            if (count == EOF) {
-                error("error reading from the input file\n");
-            }
+            fscanf(fpt, "%lf", &o[i][j]);
         }
         do {
-            count = fscanf(fpt, "%c", &c);
-            if (count == EOF) {
-                error("error reading from the input file\n");
-            }
+            fscanf(fpt, "%c", &c);
         } while (c != '\n');
     }
     fclose(fpt);
@@ -916,13 +745,10 @@ void initialize_f22(char *extdata_dir)
     for (i = 0; i < nfunc; i++) {
         for (j = 0; j < nreal; j++) {
             for (k = 0; k < nreal; k++) {
-                count = fscanf(fpt, "%lf", &l[i][j][k]);
-                if (count == EOF) {
-                    error("error reading from the input file\n");
-                }
+                fscanf(fpt, "%lf", &l[i][j][k]);
             }
             do {
-                count = fscanf(fpt, "%c", &c);
+                fscanf(fpt, "%c", &c);
             } while (c != '\n');
         }
     }
@@ -953,22 +779,16 @@ void initialize_f22(char *extdata_dir)
 
 void initialize_f23(char *extdata_dir)
 {
-    int i, j, k, count;
+    int i, j, k;
     FILE *fpt = NULL;
     char c;
     fpt = open_input_data(extdata_dir, "hybrid_func3_data.txt");
     for (i = 0; i < nfunc; i++) {
         for (j = 0; j < nreal; j++) {
-            count = fscanf(fpt, "%lf", &o[i][j]);
-            if (count == EOF) {
-                error("error reading from the input file\n");
-            }
+            fscanf(fpt, "%lf", &o[i][j]);
         }
         do {
-            count = fscanf(fpt, "%c", &c);
-            if (count == EOF) {
-                error("error reading from the input file\n");
-            }
+            fscanf(fpt, "%c", &c);
         } while (c != '\n');
     }
     fclose(fpt);
@@ -979,16 +799,10 @@ void initialize_f23(char *extdata_dir)
     for (i = 0; i < nfunc; i++) {
         for (j = 0; j < nreal; j++) {
             for (k = 0; k < nreal; k++) {
-                count = fscanf(fpt, "%lf", &l[i][j][k]);
-                if (count == EOF) {
-                    error("error reading from the input file\n");
-                }
+                fscanf(fpt, "%lf", &l[i][j][k]);
             }
             do {
-                count = fscanf(fpt, "%c", &c);
-                if (count == EOF) {
-                    error("error reading from the input file\n");
-                }
+                fscanf(fpt, "%c", &c);
             } while (c != '\n');
         }
     }
@@ -1019,22 +833,16 @@ void initialize_f23(char *extdata_dir)
 
 void initialize_f24_f25(char *extdata_dir)
 {
-    int i, j, k, count;
+    int i, j, k;
     FILE *fpt = NULL;
     char c;
     fpt = open_input_data(extdata_dir, "hybrid_func4_data.txt");
     for (i = 0; i < nfunc; i++) {
         for (j = 0; j < nreal; j++) {
-            count = fscanf(fpt, "%lf", &o[i][j]);
-            if (count == EOF) {
-                error("error reading from the input file\n");
-            }
+            fscanf(fpt, "%lf", &o[i][j]);
         }
         do {
-            count = fscanf(fpt, "%c", &c);
-            if (count == EOF) {
-                error("error reading from the input file\n");
-            }
+            fscanf(fpt, "%c", &c);
         } while (c != '\n');
     }
     fclose(fpt);
@@ -1045,16 +853,10 @@ void initialize_f24_f25(char *extdata_dir)
     for (i = 0; i < nfunc; i++) {
         for (j = 0; j < nreal; j++) {
             for (k = 0; k < nreal; k++) {
-                count = fscanf(fpt, "%lf", &l[i][j][k]);
-                if (count == EOF) {
-                    error("error reading from the input file\n");
-                }
+                fscanf(fpt, "%lf", &l[i][j][k]);
             }
             do {
-                count = fscanf(fpt, "%c", &c);
-                if (count == EOF) {
-                    error("error reading from the input file\n");
-                }
+                fscanf(fpt, "%c", &c);
             } while (c != '\n');
         }
     }
