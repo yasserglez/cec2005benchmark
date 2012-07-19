@@ -1,6 +1,6 @@
 library("cec2005benchmark")
 
-cec2005benchmark:::.disablerand()
+.C("disablerand", PACKAGE = "cec2005benchmark")
 
 extdata <- system.file("extdata", package = "cec2005benchmark")
 

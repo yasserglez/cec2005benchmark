@@ -1,4 +1,3 @@
-# Main function of the package. Interface to the C code.
 cec2005benchmark <- function (i, x) {
     if (is.numeric(i) && i >= 1 && i <= 25) {
         if (is.vector(x)) {
@@ -22,7 +21,6 @@ cec2005benchmark <- function (i, x) {
     return(f)
 }
 
-# Auxiliary functions.
 cec2005benchmark1 <- function (x) cec2005benchmark(1, x)
 cec2005benchmark2 <- function (x) cec2005benchmark(2, x)
 cec2005benchmark3 <- function (x) cec2005benchmark(3, x)
@@ -48,8 +46,3 @@ cec2005benchmark22 <- function (x) cec2005benchmark(22, x)
 cec2005benchmark23 <- function (x) cec2005benchmark(23, x)
 cec2005benchmark24 <- function (x) cec2005benchmark(24, x)
 cec2005benchmark25 <- function (x) cec2005benchmark(25, x)
-
-# Internal function to isable noise during the tests.
-.disablerand <- function () {
-    invisible(.C("disablerand", PACKAGE = "cec2005benchmark"))
-}
