@@ -1,3 +1,8 @@
+Changes in version 1.0.2:
+
+  * Added the github URL of the package.
+  * Using full names in the Author and Maintainer fields.
+
 Changes in version 1.0.1:
 
   * Removed an unneeded src/Makevars file.
