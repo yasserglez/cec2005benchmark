@@ -74,6 +74,12 @@ void allocate_memory()
             }
         }
     }
+    A_f5 = NULL;
+    B_f5 = NULL;
+    A_f12 = NULL;
+    B_f12 = NULL;
+    alpha_f12 = NULL;
+
     return;
 }
 
@@ -189,5 +195,25 @@ void free_memory()
     free(o);
     free(l);
     free(g);
+    if (A_f5 != NULL) {
+        for (i = 0; i < nreal; i++) {
+            free(A_f5[i]);
+        }
+        free(A_f5);
+    }
+    if (B_f5 != NULL)free(B_f5);
+    if (A_f12 != NULL) {
+        for (i = 0; i < nreal; i++) {
+            free(A_f12[i]);
+        }
+        free(A_f12);
+    }
+    if (B_f12 != NULL) {
+        for (i = 0; i < nreal; i++) {
+            free(B_f12[i]);
+        }
+        free(B_f12);
+    }
+    free(alpha_f12);
     return;
 }
