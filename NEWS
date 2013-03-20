@@ -1,3 +1,7 @@
+Changes in version 1.0.3:
+
+  * Fixed a bug trying to read in numbers with more than 15 digits.
+
 Changes in version 1.0.2:
 
   * Added the github URL of the package.
