@@ -5,7 +5,7 @@
 Shifted Rotated Ackley's Function with Global Optimum on Bounds
 \itemize{
   \item \eqn{x \in [-32,32]^D}
-  \item Global optimum \eqn{F(x^*) = -140}    
+  \item Global optimum \eqn{F(x^*) = -140}
 }
 }
 \usage{
@@ -19,10 +19,11 @@ cec2005benchmark8(x)
 A vector with the evaluation of the function for each row of \code{x}
 }
 \references{
-P. N. Suganthan, N. Hansen, J. J. Liang, K. Deb, Y.-P. Chen, A. Auger, S. Tiwari
-(2005). Problem Definitions and Evaluation Criteria for the CEC 2005 Special 
-Session on Real-Parameter Optimization, Technical report, Nanyang Technological 
-University, Singapore, May 2005, \url{http://www.ntu.edu.sg/home/EPNSugan}.
+P. N. Suganthan, N. Hansen, J. J. Liang, K. Deb, Y.-P. Chen, A. Auger,
+S. Tiwari (2005). Problem Definitions and Evaluation Criteria for the
+CEC 2005 Special Session on Real-Parameter Optimization, Technical
+report, Nanyang Technological University, Singapore, May 2005,
+\url{http://www.ntu.edu.sg/home/EPNSugan/index_files/CEC-05/CEC05.htm}.
 }
 \seealso{
 \code{\link{cec2005benchmark}}
