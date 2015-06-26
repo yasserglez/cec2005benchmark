@@ -2,7 +2,6 @@ Type: Package
 Package: cec2005benchmark
 Title: Benchmark for the CEC 2005 Special Session on Real-Parameter Optimization
 Version: 1.0.4
-Date: 2015-02-08
 Authors@R: c(person("Yasser", "Gonzalez-Fernandez",
 	            role = c("aut", "cre"),
 		    email = "ygonzalezfernandez@gmail.com"),
