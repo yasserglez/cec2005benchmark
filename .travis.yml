@@ -1,6 +1,7 @@
-language: r
-sudo: required
+language: R
+cache: packages
+sudo: true
+dist: trusty
 env:
   global:
-    - WARNINGS_ARE_ERRORS=1
-    - _R_CHECK_CRAN_INCOMING_=0
+    - _R_CHECK_CRAN_INCOMING_=false
