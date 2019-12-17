@@ -9,10 +9,10 @@ citEntry(entry = "manual",
                              person("Marta", "Soto")),
          year = year,
          note = paste("{R} package version", version),
-         url = "http://CRAN.R-project.org/package=cec2005benchmark",
+         url = "https://CRAN.R-project.org/package=cec2005benchmark",
          textVersion =
              paste("Yasser Gonzalez-Fernandez and Marta Soto. (", year, ") ",
                    "cec2005benchmark: Benchmark for the CEC 2005 Special Session on Real-Parameter Optimization. ",
                    paste("R package version", version),
-                   ". URL http://CRAN.R-project.org/package=cec2005benchmark",
+                   ". URL https://CRAN.R-project.org/package=cec2005benchmark",
                    ".", sep = ""))
