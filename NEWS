@@ -1,3 +1,7 @@
+Changes in version 1.0.5 (December 17, 2019):
+
+  * Adapt to new C compiler default behavior -fno-common.
+
 Changes in version 1.0.4 (February 8, 2015):
 
   * Make CITATION readable without having the package installed.

@@ -8,6 +8,24 @@
 #include "sub.h"
 #include "rand.h"
 
+double C;
+double global_bias;
+double *trans_x;
+double *basic_f;
+double *temp_x1;
+double *temp_x2;
+double *temp_x3;
+double *temp_x4;
+double *weight;
+double *sigma;
+double *lambda;
+double *bias;
+double *norm_x;
+double *norm_f;
+double **o;
+double **g;
+double ***l;
+
 /* Code to allocate memory to global variables being used in evaluation of functions */
 void allocate_memory()
 {

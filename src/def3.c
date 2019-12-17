@@ -12,6 +12,13 @@
 #include "sub.h"
 #include "rand.h"
 
+double **A_f5;
+double *B_f5;
+
+double **A_f12;
+double **B_f12;
+double *alpha_f12;
+
 FILE *open_input_data(char *extdata_dir, char *name)
 {
     FILE *fpt = NULL;

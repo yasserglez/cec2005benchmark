@@ -9,6 +9,11 @@
 #include "sub.h"
 #include "rand.h"
 
+int nreal;
+int nfunc;
+double bound;
+int density;
+
 void
 cec2005benchmark(char **extdatadir, int *i, double *X, int *row, int *col, double *f)
 {

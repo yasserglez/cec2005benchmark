@@ -15,30 +15,29 @@
 #define PI 3.1415926535897932384626433832795029
 
 /* Global variables that you are required to initialize */
-int nreal; /* number of real variables */
-int nfunc; /* number of basic functions */
-double bound; /* required for plotting the function profiles for nreal=2 */
-int density; /* density of grid points for plotting for nreal=2 */
+extern int nreal; /* number of real variables */
+extern int nfunc; /* number of basic functions */
+extern double bound; /* required for plotting the function profiles for nreal=2 */
+extern int density; /* density of grid points for plotting for nreal=2 */
 
 /* Global variables being used in evaluation of various functions */
-/* These are initalized in file def2.c */
-double C;
-double global_bias;
-double *trans_x;
-double *basic_f;
-double *temp_x1;
-double *temp_x2;
-double *temp_x3;
-double *temp_x4;
-double *weight;
-double *sigma;
-double *lambda;
-double *bias;
-double *norm_x;
-double *norm_f;
-double **o;
-double **g;
-double ***l;
+extern double C;
+extern double global_bias;
+extern double *trans_x;
+extern double *basic_f;
+extern double *temp_x1;
+extern double *temp_x2;
+extern double *temp_x3;
+extern double *temp_x4;
+extern double *weight;
+extern double *sigma;
+extern double *lambda;
+extern double *bias;
+extern double *norm_x;
+extern double *norm_f;
+extern double **o;
+extern double **g;
+extern double ***l;
 
 /* Auxilary function declarations */
 double maximum(double, double);
